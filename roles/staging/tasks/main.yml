@@ -1,0 +1,13 @@
+---
+- name: Remove Default Config
+  file: dest=/etc/nginx/sites-enabled/default state=absent
+  notify: 
+    - Reload Nginx
+
+- name: Add Server {{ project }} Config
+  template: src={{ project }}.j2 dest=/etc/nginx/sites-available/{{ project }} owner=root group=root
+
+- name: Enable Site Config
+  file: src=/etc/nginx/sites-available/{{ project }} dest=/etc/nginx/sites-enabled/{{ project }} state=link
+  notify: 
+    - Reload Nginx

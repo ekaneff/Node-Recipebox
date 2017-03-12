@@ -1,0 +1,8 @@
+---
+- name: Installing Node
+  script: node.sh
+
+- name: Create Bare Repo
+  script: repos.sh
+
+

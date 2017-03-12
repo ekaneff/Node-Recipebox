@@ -1,0 +1,18 @@
+---
+  - hosts: staging:production
+    become: true
+    user: root
+    roles: 
+      - nginx
+
+  - hosts: staging
+    become: true
+    user: root
+    roles: 
+      - staging
+
+  - hosts: production
+    become: true
+    user: root
+    roles: 
+      - production
