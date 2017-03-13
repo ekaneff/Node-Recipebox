@@ -9,4 +9,9 @@ if [ ! -d "$DIRECTORY" ]; then
 	sudo apt-get install nodejs
 	sudo apt-get install build-essential -y
 	sudo npm install -g pm2
+
+	cd /var/www/html/recipebox
+	/usr/local/lib/npm/bin/pm2 start server.js
+
+
 fi

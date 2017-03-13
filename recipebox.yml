@@ -4,6 +4,7 @@
     user: root
     roles: 
       - nginx
+      - node
 
   - hosts: staging
     become: true
