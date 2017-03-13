@@ -6,6 +6,7 @@
 * [Set up the VPS](#one)
 * [Installing Ansible](#two)
 * [Running the Ansible Playbook](#three)
+* [Setting up CodeShip](#four)
 * [Resources](#resources)
 
 <a name="one"></a>
@@ -82,6 +83,7 @@ ssh root@[your ip]
 
 Then navigate to the `/var/www/html` folder. Run an `ls` command and if you see the name of your project folder, everything went smoothly. 
 
+<a name="four"></a>
 ## Step Four: Setting up CodeShip
 
 Since we are implementing a centralized workflow using Git, we need a way to run tests and push our content to our servers after certain events take place on our Github repository. We can do this through a program called [CodeShip](http://codeship.com/). We can tell CodeShip to watch our repository on certain branches for activity and from there it will fire off any pre-setup scripts or tests that we specify, and on success we can have it actually deploy to our server. 
