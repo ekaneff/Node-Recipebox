@@ -1,0 +1,24 @@
+extends ../layouts/master
+
+block content 
+	div.page-header(id='profile')
+		div.container
+			h1 #{name}'s Recipes
+	div.container
+		a.btn.btn-success(href='/create') New Recipe 
+		div.recipes
+			div.row
+				-for(var i = 0; i < recipes.length; i++ )
+					div.col-sm-6.col-md-6
+						div.thumbnail
+							img.img-responsive(src=recipes[i].smImgSrc)
+							div.caption
+								h2= recipes[i].title
+								p!= ratings[i]
+								p.desc= recipes[i].description
+								h3 Ingredients
+								ul
+									each ingredient in recipes[i].ingredients
+										li= ingredient
+								a.btn.btn-success.cardbtns(href='/edit/' + recipes[i]._id) Edit 
+								a.btn.btn-danger.cardbtns(href='/delete/' + recipes[i]._id) Delete

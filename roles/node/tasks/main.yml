@@ -1,11 +1,4 @@
 ---
-- name: Copy Server.js File for PM2 to Start
-  - copy:
-    src: /roles/node/files/server.js
-    dest: /var/www/html/{{project}}
-    owner: root
-    group: root
-
 - name: Installing Node
   script: node.sh
 

@@ -1,0 +1,152 @@
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+	margin: 0;
+}
+
+.navbar .navbar-default {
+	border-color: none;
+	background: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+	transition: .2s;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+	background: #FF9B42;
+	border-radius: 2px;
+	color: white;
+}
+
+#home {
+	background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('../assets/bg.jpg');
+	background-position: center center;
+	background-size: cover;
+	padding: 100px 0;
+	margin: 0;
+	color: white;
+}
+
+#home h1 {
+	font-size: 40px;
+}
+
+.second-nav {
+	margin: 20px 0;
+}
+
+/* LOGIN PAGE */
+
+.login {
+	background:
+	    linear-gradient(
+	      rgba(0, 0, 0, 0.3), 
+	      rgba(0, 0, 0, 0.3)
+	    ),
+	    url('../assets/loginbg.jpg');
+    height: 700px;
+}
+
+.login .container {
+	width: 400px;
+}
+
+.login h1 {
+	text-align: center;
+	margin: 0;
+}
+
+.login form {
+	background: white;
+	margin-top: 100px;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.loginbtn {
+	margin-right: 10px;
+}
+
+/* profile */
+
+#profile {
+	background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('../assets/recipebg.jpg');
+	background-position: center center;
+	background-size: cover;
+	padding: 100px 0;
+	margin: 0;
+	margin-bottom: 20px;
+	color: white;
+}
+
+#profile h1 {
+	text-align: right;
+}
+
+.recipes {
+	margin-top: 20px;
+}
+
+.cardbtns {
+	margin: 5px;
+}
+
+.thumbnail {
+	border-radius: 0;
+}
+
+.thumbnail h2 {
+	margin-top: 0;
+}
+
+.glyphicon {
+	top: 0;
+	color: #FF9B42;
+}
+
+/*.body {
+	width: 50%;
+}*/
+
+/*.bigImg {
+	width: 50%;
+}*/
+
+
+/* DETAILS */
+.detail-img {
+	margin-top: 25px;
+}
+
+/* SAVED */
+
+#saved {
+	background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('../assets/savedbg.jpeg');
+	background-position: center center;
+	background-size: cover;
+	padding: 100px 0;
+	margin: 0;
+	margin-bottom: 20px;
+	color: white;
+	text-align: right;
+}
+
+
