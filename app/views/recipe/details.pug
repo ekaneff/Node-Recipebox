@@ -1,0 +1,15 @@
+extends ../layouts/master
+
+block content
+	div.container
+		if recipe.ownerId == '0'
+			img.img-responsive.col-md-6.detail-img(src=recipe.lgImgSrc)
+		div.pull-left.col-md-6
+			h1= recipe.title
+			p!= rating[0]
+			p= recipe.description
+			h3 Ingredients
+			ul
+				each ingredient in recipe.ingredients
+					li= ingredient
+

@@ -1,0 +1,18 @@
+extends ../layouts/master
+
+block content
+		div.page-header(id='saved')
+			div.container
+				h1 Saved Recipes
+		div.container
+			div.row
+					-for(var i = 0; i < recipes.length; i++ )
+						div.col-sm-6.col-md-4
+							div.thumbnail
+								img.img-responsive(src=recipes[i].smImgSrc)
+								div.caption
+									h3
+										a(href='/recipe/' + recipes[i]._id)= recipes[i].title
+									p!= ratings[i]
+									p.desc= recipes[i].description
+									a.btn.btn-danger(href='/save/remove/' + recipes[i]._id) Remove

@@ -1,0 +1,23 @@
+extends ../layouts/master
+
+block content
+	div.login
+		div.container
+			form(action='/user/register' method='post')
+				h1 Register
+				if errors
+					each val,index in errors
+						div.alert.alert-danger= errors[index].msg
+				div.form-group
+					label(for='name') Name
+					input.form-control(type='text', id='name', name='name', placeholder='Name')
+				div.form-group
+					label(for='username') Username
+					input.form-control(type='text', id='username', name='username', placeholder='Username')
+				div.form-group
+					label(for='email') Email
+					input.form-control(type='email', id='email', name='email', placeholder='Email')
+				div.form-group
+					label(for='password') Password
+					input.form-control(type='password', id='password', name='password', placeholder='Password')
+				button.btn.btn-success(type='submit') Submit

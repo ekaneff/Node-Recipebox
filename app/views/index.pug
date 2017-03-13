@@ -1,0 +1,33 @@
+extends layouts/master
+
+block content 
+	div.page-header(id='home')
+		div.container
+			h1 Welcome to RecipeBox
+	div.container
+		nav.second-nav(role='navigation')
+			ul.nav.nav-tabs
+				li.active(role='presentation')
+					a(href='#') Today's Featured
+				li(role='presentation')
+					a(href='#') Top Rated
+				li(role='presentation')
+					a(href='#') Recently Added
+		div.row
+			-for(var i = 0; i < recipes.length; i++ )
+				div.col-sm-6.col-md-4
+					div.thumbnail
+						img.img-responsive(src=recipes[i].smImgSrc)
+						div.caption
+							h3
+								a(href='/recipe/' + recipes[i]._id)= recipes[i].title
+							p!= ratings[i]
+							p.desc= recipes[i].description
+							if saved
+								p.saved Saved
+							else
+								a.btn.btn-primary(href='/save/recipe/' + recipes[i]._id) Save Recipe
+
+
+
+

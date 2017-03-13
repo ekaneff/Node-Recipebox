@@ -1,0 +1,2 @@
+var clicked = false;
+
