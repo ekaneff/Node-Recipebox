@@ -1,0 +1,12 @@
+---
+- name: Transfer .env file
+  copy: src=.env dest=/var/www/html/{{project}} owner=root group=root
+
+- name: Run Mongo Script
+  script: mongo.sh
+
+- name: Copying mongodb.service
+  copy: src=mongodb.service dest=/etc/systemd/system owner=root group=root
+  notify: 
+    - Start Mongo
+    - Enable Mongo
