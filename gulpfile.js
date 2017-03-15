@@ -11,6 +11,18 @@ gulp.task('add', function() {
 		.pipe(git.commit(argv.m));
 });
 
+gulp.task('push', ['tag'], function() {
+	git.push('origin', argv.b, {args: " --tags"}, function (err) {
+    	if (err) throw err;
+  	});
+});
+
+gulp.task('tag', function(){
+  git.tag(argv.v, argv.m, function (err) {
+    if (err) throw err;
+  });
+});
+
 gulp.task('checkoutReleaseCreate', function(){
   git.checkout('release', {args:'-b'}, function (err) {
     if (err) throw err;
