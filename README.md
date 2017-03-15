@@ -9,6 +9,7 @@ In this walk through, I will be going through the process of pushing and doing p
 * [Creating a Pull Request](#one)
 * [Handling the Pull Request](#two)
 * [Watch CodeShip](#three)
+* [Start pm2](#four)
 
 <a name="one"></a>
 ## Step One: Creating a Pull Request
@@ -47,4 +48,35 @@ If anything goes wrong, CodeShip will notify you of what happened and when in th
 
 What CodeShip does is it will clone down a copy of the repository into a `clone` folder, and then from there it will copy that code base to the specified location in the deployment script, that being `rsync` in our case. 
 
-If CodeShip doesn't error out, then the file transfer happened successfully! You can now open your project in the browser at the IP of the server or the specified domain name laid out in the server configuration files in both the staging and production roles.
+If CodeShip doesn't error out and everything is green, then the file transfer happened successfully! 
+
+<a name="four"></a>
+## Step Four: Start pm2
+
+If you have ever worked with a Node application before, you know that typically you run something like `npm start` to run your server and open the files in the browser when working locally. However, once you close your terminal, the server quits and that's the end of that session. 
+
+To work around this, there is a package called `pm2` that will allow us to keep our session going within our VPS. Our automation script installs the package for us, but we will need to go into our server and begin the process. 
+
+To do this, ssh into your Staging server as root: 
+
+```shell
+ssh root@[staging server ip]
+``` 
+
+and navigate to the folder where the files will be served live: 
+
+```shell
+cd /var/www/html/recipebox
+```
+
+Once there, simply run the command: 
+
+```shell
+pm2 start server.js
+```
+
+Exit out of your server. 
+
+You should now be able to navigate to `recipe.[your stage/production ip].xip.io` and be greeted by your node application!
+
+> It may take a minute for the files to serve. 
