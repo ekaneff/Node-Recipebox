@@ -7,7 +7,6 @@
 * [Installing Ansible](#two)
 * [Running the Ansible Playbook](#three)
 * [Setting up CodeShip](#four)
-* [Using Gulp for Git](#five)
 * [Resources](#resources)
 
 <a name="one"></a>
@@ -119,34 +118,6 @@ rsync -avz ~/clone/ ssh_user@your.server.com:/path/on/server/
 Adjust the specifications as needed. The path on the server should match the path set up in the server config file in out ansible script. In this case, it would be `/var/www/html/recipebox`, since this is where we are telling nginx to look. 
 
 Select 'Create Deployment' after that line is complete. If you would like to go ahead and set up the second deployment pipeline now, you can do so by selecting the 'Add new deployment pipeline' tab and repeating the same steps as previously outlined, but changing the IP used in the `rsync` line to that of the other server. 
-
-<a name="five"></a>
-## Step Five: Using Gulp for Git
-
-To make your workflow just a little bit easier, included in the repository is a `gulpfile` that can be used to make some initial git setup and git commands go by a little quicker. 
-
-Since Gulp is a Node package, we need to install it using `npm` into our project. The `package.json` with the needed dependancies is already in the repo, to install Gulp and the other necessary packages, you can simply run: 
-
-```shell
-npm install
-```
-
-Once that finishes, if you are still located on your master branch, you can run the command `gulp` in your terminal and the Gulp tasks will create a release and development branch for you, preparing you for your feature branch workflow. 
-
-Then, throughout your development process, instead of running the commands `git add` and `git commit`, you can simply run: 
-
-```shell
-gulp add --m [your commit message]
-```
-> After you run this command, run `git status` to double check that things were committed correctly. If it errors out and you still see the files as staged, try running the `gulp add` command again. 
-
-When you are ready to push to your remote branches, you can both push and add a new tag in one command by running: 
-
-```shell
-gulp push --b [branch you want to push] --v [version for tag] --m [tag message]
-```
-
-This is meant to help take away some of the more repetitive tasks needed when doing a proper git workflow, and leaves less room for human error. 
 
 Once that is finished, you are ready to begin pushing files to your repository. That process will be outlined in the [README.md](README.md) of this repository. 
 
