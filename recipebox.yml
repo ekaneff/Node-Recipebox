@@ -5,6 +5,7 @@
     roles: 
       - nginx
       - node
+      - mongo
 
   - hosts: staging
     become: true
