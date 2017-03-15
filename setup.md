@@ -43,11 +43,11 @@ Before running the playbook command, there are a few minor adjustments that need
 
 Open the `hosts` file and place the IP address of your Staging and Production servers within that file. Also, under `roles/staging/vars` and `roles/production/vars`, change the variable `ip` to be the IP of the staging and production servers respectively. 
 
-Also be sure to change the name of the `project` variable located in `vars` in both the Staging and Production roles to whatever is suited for your project (in this case, it is `indiespot`). Change the name of the file located in the `templates` folder in both the Production and Staging roles to match that project name keeping the extension of `.j2`. 
+Also be sure to change the name of the `project` variable located in `vars` in both the Staging and Production roles to whatever is suited for your project (in this case, it is `recipebox`). Change the name of the file located in the `templates` folder in both the Production and Staging roles to match that project name keeping the extension of `.j2`. 
 
 Finally, you will need to go into `setup.sh` and change the name of the directory that will be created to match the name of the project you set in the `vars` files. 
 
-With the set up I have laid out in these scripts, ansible will be running three playbooks. You can view these in the main `.yml` file located in the root of the directory (for this project, it is titled `indiespot.yml`). 
+With the set up I have laid out in these scripts, ansible will be running three playbooks. You can view these in the main `.yml` file located in the root of the directory (for this project, it is titled `recipebox.yml`). 
 
 The first playbook will install Nginx onto both servers and run the set up script to create the project folder in `/var/www/html` for Nginx to point at when serving. The second and third playbook will run the scripts needed to place the server config files in the `sites-enabled` folder on the servers individually. This will allow for us to have separate environments for the content that is live verses the content we are actively updating and making changes to. 
 
@@ -115,7 +115,7 @@ In the provided space, place this line:
 ```shell
 rsync -avz ~/clone/ ssh_user@your.server.com:/path/on/server/
 ```
-Adjust the specifications as needed. The path on the server should match the path set up in the server config file in out ansible script. In this case, it would be `/var/www/html/indiespot`, since this is where we are telling nginx to look. 
+Adjust the specifications as needed. The path on the server should match the path set up in the server config file in out ansible script. In this case, it would be `/var/www/html/recipebox`, since this is where we are telling nginx to look. 
 
 Select 'Create Deployment' after that line is complete. If you would like to go ahead and set up the second deployment pipeline now, you can do so by selecting the 'Add new deployment pipeline' tab and repeating the same steps as previously outlined, but changing the IP used in the `rsync` line to that of the other server. 
 
