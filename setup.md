@@ -7,6 +7,7 @@
 * [Installing Ansible](#two)
 * [Running the Ansible Playbook](#three)
 * [Setting up CodeShip](#four)
+* [Using Gulp for Git](#five)
 * [Resources](#resources)
 
 <a name="one"></a>
@@ -135,9 +136,15 @@ Once that finishes, if you are still located on your master branch, you can run 
 Then, throughout your development process, instead of running the commands `git add` and `git commit`, you can simply run: 
 
 ```shell
-gulp add --m [you commit message]
+gulp add --m [your commit message]
 ```
 > After you run this command, run `git status` to double check that things were committed correctly. If it errors out and you still see the files as staged, try running the `gulp add` command again. 
+
+When you are ready to push to your remote branches, you can both push and add a new tag in one command by running: 
+
+```shell
+gulp push --b [branch you want to push] --v [version for tag] --m [tag message]
+```
 
 This is meant to help take away some of the more repetitive tasks needed when doing a proper git workflow, and leaves less room for human error. 
 
