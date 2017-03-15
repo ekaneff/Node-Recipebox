@@ -1,0 +1,22 @@
+{
+  "name": "node_recipebox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emily Kaneff",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "express-validator": "^3.1.2",
+    "glob": "^7.1.1",
+    "mongoose": "^4.7.7",
+    "nodemon": "^1.11.0",
+    "pug": "^2.0.0-beta6"
+  }
+}

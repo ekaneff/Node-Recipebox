@@ -1,0 +1,6 @@
+---
+- name: Start Mongo
+  service: name=mongodb state=started
+
+- name: Enable Mongo
+  service: name=mongodb enabled=yes

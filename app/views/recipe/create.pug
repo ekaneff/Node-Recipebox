@@ -1,0 +1,20 @@
+extends ../layouts/master
+
+block content
+	h1 New Recipe
+	div.container
+		form(action='/save' method='post')
+			input(type='hidden', value=userId, name='id')
+			div.form-group
+				label(for='title') Title
+				input.form-control(type='text', id='title', name='title', placeholder='Title')
+			div.form-group
+				label(for='rating') Rating
+				input.form-control(type='text', id='rating', name='rating', placeholder='Rating', size=1)
+			div.form-group
+				label(for='description') Description
+				textarea.form-control(rows='3', name='description', placeholder='Provide a brief description of your recipe', id='description')
+			div.form-group
+				label(for='description') Ingredients
+				textarea.form-control(rows='3', name='ingredients', placeholder='Put each ingredient on a new line', id='ingredients')
+			button.btn.btn-success(type='submit') Create

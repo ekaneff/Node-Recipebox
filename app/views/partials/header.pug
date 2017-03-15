@@ -1,0 +1,30 @@
+nav.navbar.navbar-default
+	div.container-fluid
+		div.navbar-header
+			button(type='button', class='navbar-toggle collapsed' data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			if login
+				a(class='navbar-brand', href='/') RecipeBox
+				p.navbar-text Welcome, #{name}
+			else
+				a(class='navbar-brand', href='/') RecipeBox
+		div.collapse.navbar-collapse(id='bs-example-navbar-collapse-1')
+			ul.nav.navbar-nav.navbar-right
+				if login 
+					li
+						a(href='/user/profile') My Recipes
+					li
+						a(href='/save/view') Saved
+					li
+						a(href='/user/logout') Logout
+					
+				else
+					li
+						a(href="/user/login") Log in
+					li
+						a(href="/user/register") Register
+					li
+						a(href='/save/view') Saved
+

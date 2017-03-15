@@ -1,0 +1,30 @@
+extends ../layouts/master
+
+block content
+	div.login
+		div.container
+			form(action='/user/login' method='post')
+				h1 Log in
+				if guest
+					if errors
+						each val,index in errors
+							div.alert.alert-danger= errors[index].msg
+					div.form-group
+						label(for='username') Username
+						input.form-control(type='text', id='username', name='username', placeholder='Username')
+					div.form-group
+						label(for='password') Password
+						input.form-control(type='password', id='password', name='password', placeholder='Password')
+					button.btn.btn-success.loginbtn(type='submit') Submit 
+				else 
+					if errors
+						each val,index in errors
+							div.alert.alert-danger= errors[index].msg
+					div.form-group
+						label(for='username') Username
+						input.form-control(type='text', id='username', name='username', placeholder='Username')
+					div.form-group
+						label(for='password') Password
+						input.form-control(type='password', id='password', name='password', placeholder='Password')
+					button.btn.btn-success.loginbtn(type='submit') Submit
+					a(href='/user/guest') Continue as guest
