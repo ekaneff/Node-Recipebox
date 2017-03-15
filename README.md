@@ -14,7 +14,7 @@ In this walk through, I will be going through the process of pushing and doing p
 
 
 <a name="one"></a>
-## Step Five: Using Gulp for Git
+## Step One: Using Gulp for Git
 
 To make your workflow just a little bit easier, included in the repository is a `gulpfile` that can be used to make some initial git setup and git commands go by a little quicker. 
 
@@ -72,8 +72,8 @@ Make sure that the title and comment sections are filled out with any relevant i
 
 In this case, we are the administrators of this repository, so we are able to merge in the pull request immediately. If there are no conflicts to resolve, select the 'Merge pull request' button and confirm the merge. You can then delete the development branch as it will indicate that it is safe to do so. 
 
-<a name="three"></a>
-## Step Three: Watch CodeShip
+<a name="four"></a>
+## Step Four: Watch CodeShip
 
 Because of the `rsync` command we set up on CodeShip, merging into the correct branches is the only thing we have to do in order to deploy our files. However, if you navigate to the dashboard of your project, you will be ale to watch the progress of the deployment scripts as they fire.
 
@@ -85,8 +85,8 @@ What CodeShip does is it will clone down a copy of the repository into a `clone`
 
 If CodeShip doesn't error out and everything is green, then the file transfer happened successfully! 
 
-<a name="four"></a>
-## Step Four: Start pm2
+<a name="five"></a>
+## Step Five: Start pm2
 
 If you have ever worked with a Node application before, you know that typically you run something like `npm start` to run your server and open the files in the browser when working locally. However, once you close your terminal, the server quits and that's the end of that session. 
 
