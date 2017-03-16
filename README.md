@@ -103,12 +103,18 @@ and navigate to the folder where the files will be served live:
 ```shell
 cd /var/www/html/recipebox
 ```
+Before starting pm2, we need to install the `package.json` so that all the necessary dependances get added to the project. To do this, run: 
 
-Once there, simply run the command: 
+```shell
+npm install
+```
+
+Once that finishes, simply run the command: 
 
 ```shell
 pm2 start server.js
 ```
+to start up the processes. 
 
 Exit out of your server. 
 
