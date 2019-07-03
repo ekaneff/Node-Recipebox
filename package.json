@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Emily Kaneff",
   "license": "ISC",
@@ -21,6 +23,8 @@
     "mongoose": "^4.7.7",
     "nodemon": "^1.11.0",
     "pug": "^2.0.0-beta6",
-    "yargs": "^7.0.2"
-  }
+    "yargs": "^7.0.2",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
