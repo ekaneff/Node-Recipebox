@@ -18,7 +18,7 @@
     "gulp": "^3.9.1",
     "gulp-git": "^2.1.0",
     "gulp-gitignore": "^0.1.0",
-    "mongoose": "^4.7.7",
+    "mongoose": "^5.3.9",
     "nodemon": "^1.11.0",
     "pug": "^2.0.0-beta6",
     "yargs": "^7.0.2"
